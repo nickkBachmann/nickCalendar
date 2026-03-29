@@ -1,0 +1,63 @@
+﻿
+> nickcalendar@0.1.0 lint
+> eslint
+
+
+C:\Users\nbach\nickcalendar\app\layout.tsx
+  1:15  warning  'Metadata' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\nbach\nickcalendar\app\page.tsx
+    7:27  warning  'ImportantDateEvent' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+  266:9   warning  The 'months' array makes the dependencies of useMemo Hook (at line 688) change on every render. To fix this, wrap the initialization of 'months' in its own useMemo() Hook                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react-hooks/exhaustive-deps
+  313:9   warning  'dayScrollRef' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  384:9   warning  'foundDay' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  471:12  warning  'toggleSidebar' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+  693:20  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\nbach\nickcalendar\app\page.tsx:693:20
+  691 |   function addShift() {
+  692 |     const shift: Shift = {
+> 693 |       id: `shift-${Date.now()}`,
+      |                    ^^^^^^^^^^ Cannot call impure function
+  694 |       startTime: newShiftStartTime,
+  695 |       endTime: newShiftEndTime,
+  696 |       participants: newShiftParticipants,  react-hooks/purity
+
+C:\Users\nbach\nickcalendar\lib\mongodb.ts
+  16:7  error  'globalWithMongo' is never reassigned. Use 'const' instead  prefer-const
+
+C:\Users\nbach\nickcalendar\next.config.ts
+  5:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\nbach\nickcalendar\public\sw.js
+  79:9  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+  81:9  warning  'event' is defined but never used    @typescript-eslint/no-unused-vars
+  82:9  warning  'state' is defined but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\nbach\nickcalendar\public\workbox-e43f5367.js
+     3:5   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+     5:7   warning  Expected an assignment or function call and instead saw an expression                                                @typescript-eslint/no-unused-expressions
+     6:14  warning  'e' is defined but never used                                                                                        @typescript-eslint/no-unused-vars
+    52:7   error    Definition for rule '@typescript-eslint/ban-types' was not found                                                     @typescript-eslint/ban-types
+   419:5   error    Definition for rule '@typescript-eslint/ban-types' was not found                                                     @typescript-eslint/ban-types
+   435:5   warning  Unused eslint-disable directive (no problems were reported)
+   456:5   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+   458:7   warning  Expected an assignment or function call and instead saw an expression                                                @typescript-eslint/no-unused-expressions
+   459:14  warning  'e' is defined but never used                                                                                        @typescript-eslint/no-unused-vars
+   752:11  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unsafe-member-access')
+   754:13  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unsafe-assignment')
+   948:11  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unsafe-assignment')
+   964:13  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unsafe-assignment')
+   970:13  warning  Unused eslint-disable directive (no problems were reported)
+  1185:5   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  1187:7   warning  Expected an assignment or function call and instead saw an expression                                                @typescript-eslint/no-unused-expressions
+  1188:14  warning  'e' is defined but never used                                                                                        @typescript-eslint/no-unused-vars
+  1346:5   error    Definition for rule '@typescript-eslint/ban-types' was not found                                                     @typescript-eslint/ban-types
+  1738:35  warning  Unused eslint-disable directive (no problems were reported)
+  2076:18  warning  'error' is defined but never used                                                                                    @typescript-eslint/no-unused-vars
+
+Ô£û 32 problems (9 errors, 23 warnings)
+  1 error and 7 warnings potentially fixable with the `--fix` option.
+
