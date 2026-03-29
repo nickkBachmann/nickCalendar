@@ -1,37 +1,3 @@
-:global {
-  :root {
-    --sidebar-w: 80px;
-    --date-sidebar-w: 280px;
-    --right-sidebar-w: 320px;
-    --transition-speed: 0.5s;
-    --sidebar-bg: #f8fafc;
-    --sidebar-main-bg: #ffffff;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --border: #e2e8f0;
-    --bg-main: #ffffff;
-    --background: #ffffff;
-    /* Sync with globals */
-    --sidebar-main-bg-glass: rgba(255, 255, 255, 0.75);
-    --sidebar-bg-glass: rgba(248, 250, 252, 0.75);
-  }
-}
-
-:global {
-  .dark {
-    --sidebar-bg: #161616;
-    --sidebar-main-bg: #131313;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --border: #242424;
-    --bg-main: #131313;
-    --background: #020617;
-    /* Sync with globals */
-    --sidebar-main-bg-glass: rgba(19, 19, 19, 0.75);
-    --sidebar-bg-glass: rgba(22, 22, 22, 0.75);
-  }
-}
-
 .container {
   display: flex;
   height: 100vh;
